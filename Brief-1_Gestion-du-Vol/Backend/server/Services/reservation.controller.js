@@ -1,15 +1,29 @@
 'use strict';
 
-const { Reservation } = require('../Models/models');
+const { Reservation, Utilisateur , Vols } = require('../Models/models');
+const winston = require('winston');
+
+// Configure logger
+const logger = winston.createLogger({
+    level: 'info',
+    format: winston.format.json(),
+    transports: [
+      new winston.transports.File({ filename: 'reservations.log', level: 'info' })
+    ],
+});
 
 exports.create = async (req, res) => {
     try {
         const reservation = await Reservation.create(req.body);
         res.json(reservation);
-      } catch (error) {
+        const utilisateur = await Utilisateur.findByPk(req.body.user_id);
+        const vol = await Vols.findByPk(req.body.vol_id);
+        logger.info('Reservation Created:', { reservation: reservation.toJSON() , utilisateur: utilisateur.toJSON(), vol: vol.toJSON() });
+    } catch (error) {
         res.status(400).json({ error: error.message });
-      }
-}
+        logger.error('Error creating reservation', { error: error.message });
+    }
+};
 
 exports.getAll = async (req, res) => {
     try {

@@ -34,7 +34,7 @@ function PaymentForm() {
           nombre_places: bookingDetails.passengers,
           statut: "confirmed",
           vol_id: bookingDetails.selectedFlight,
-          user_id: 1 // Assuming you have user identification managed globally or via context
+          user_id: parseInt(localStorage.getItem("userId"))
         })
       });
   
