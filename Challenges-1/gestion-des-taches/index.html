@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Tâches SONX</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <link href="styles.scss" rel="stylesheet">
+</head>
+<body>
+    <!-- Add Bootstrap for styling -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+<div class="container mt-5">
+    <h1>Gestion des Tâches</h1>
+    <input id="new-task" type="text" placeholder="Ajouter une nouvelle tâche">
+    <button onclick="addTask()">Ajouter</button>
+
+    <input id="search-task" type="text" placeholder="Rechercher une tâche" onkeyup="searchTasks()">
+
+    <div>
+        <input type="checkbox" id="filter-completed" onchange="filterTasks()">
+        <label for="filter-completed">Tâches complétées</label>
+        <input type="checkbox" id="filter-not-completed" onchange="filterTasks()">
+        <label for="filter-not-completed">Tâches non complétées</label>
+        
+    </div>
+
+    <ul id="task-list"></ul>
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>

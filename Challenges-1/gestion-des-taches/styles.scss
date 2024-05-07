@@ -1,0 +1,116 @@
+// Define color variables
+$primary-color: #007bff; // Bootstrap primary blue
+$danger-color: #dc3545; // Bootstrap red for danger actions
+
+// Basic styling for the container and list
+body {
+  background-color: #f8f9fa; // Light grey background
+}
+
+.container {
+  margin-top: 2rem;
+  input, button {
+    margin-top: 0.5rem;
+  }
+}
+
+// Styling for task list items
+#task-list li {
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// Button styles
+button {
+  margin-left: 0.5rem;
+}
+
+.toggle-btn {
+  background-color: $danger-color;
+  color: white;
+  &:hover {
+    background-color: darken($danger-color, 10%);
+  }
+}
+
+.delete-btn {
+  background-color: lighten($danger-color, 10%);
+  color: white;
+  &:hover {
+    background-color: $danger-color;
+  }
+}
+// Color variables
+$primary-color: #007bff;
+$danger-color: #dc3545;
+$success-color: #28a745;
+$warning-color: #ffc107;
+
+// Button styling
+.toggle-btn {
+  color: white;
+  &.btn-danger {
+    background-color: $danger-color;
+  }
+  &.btn-success {
+    background-color: $success-color;
+  }
+}
+
+.delete-btn {
+  color: white;
+  background-color: $warning-color;
+}
+
+// List styling
+.list-group-item {
+  margin-top: 0.5rem;
+}
+
+// Additional styling for completed tasks
+.completed {
+  text-decoration: line-through;
+}
+// Color palette
+$primary-color: #007bff; // Bootstrap's primary blue
+$input-focus-color: darken($primary-color, 10%);
+$light-gray: #f8f9fa;
+$dark-gray: #343a40;
+
+// Input text fields styling
+input[type="text"] {
+  border: 2px solid $primary-color;
+  border-radius: 0.25rem;
+  padding: 0.375rem 0.75rem;
+  margin: 0.375rem 0;
+
+  &:focus {
+    border-color: $input-focus-color;
+    box-shadow: 0 0 0 0.2rem rgba($primary-color, 0.25);
+  }
+}
+
+// Checkbox styling
+input[type="checkbox"] {
+  accent-color: $primary-color; // This changes the color of the checkbox
+}
+
+// Labels styling
+label {
+  color: $dark-gray;
+  font-weight: bold;
+  margin-left: 0.5rem;
+}
+
+// General styling for better alignment and spacing
+.container {
+  input, button, label {
+    display: block; // Makes elements block to align them vertically
+  }
+
+  button {
+    margin-top: 0.5rem;
+  }
+}
