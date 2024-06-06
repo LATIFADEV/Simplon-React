@@ -2,14 +2,14 @@
 async function fetchTodos() {
     const response = await fetch('https://jsonplaceholder.typicode.com/todos');
     const data = await response.json();
-    console.log("Fetched tasks:", data.slice(0, 10));  // Log the data to see what is received
-    return data.slice(0, 10);  // Only return the first 10 items
+    console.log("Fetched tasks:", data.slice(0, 10));  
+    return data.slice(0, 10); 
 }
 document.addEventListener('DOMContentLoaded', async () => {
     try {
         const todos = await fetchTodos();
         const taskList = document.getElementById('task-list');
-        console.log("Adding tasks to the DOM:", todos);  // Debug: Log the tasks to be added
+        console.log("Adding tasks to the DOM:", todos);  
 
         todos.forEach(todo => {
             const task = document.createElement('li');
@@ -64,17 +64,16 @@ function searchTasks() {
     const searchValue = document.getElementById('search-task').value.toLowerCase();
     const tasks = document.getElementById('task-list').getElementsByTagName('li');
     
-    console.log("Search value:", searchValue); // Debug: Log the current search value
-
+    console.log("Search value:", searchValue); 
     Array.from(tasks).forEach(task => {
-        const title = task.firstChild.textContent.toLowerCase(); // Ensure you are targeting the text node correctly
+        const title = task.firstChild.textContent.toLowerCase(); 
 
-        console.log("Task title:", title); // Debug: Log each task title
+        console.log("Task title:", title); 
 
         if (title.includes(searchValue)) {
-            task.style.display = ""; // Make task visible
+            task.style.display = ""; 
         } else {
-            task.style.display = "none"; // Hide task
+            task.style.display = "none"; 
         }
     });
 }
